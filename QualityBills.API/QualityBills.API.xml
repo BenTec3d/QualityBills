@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QualityBills.API</name>
+    </assembly>
+    <members>
+        <member name="M:QualityBills.API.Authentication.AuthenticationController.Authenticate(QualityBills.API.Authentication.AuthenticationDto)">
+            <summary>
+            Authenticates an employee and returns a JSON Web Token
+            </summary>
+            <param name="authenticationDto">The AuthenticationDto for the authentication</param>
+            <returns>Action Result of string containing a JSON Web Token</returns>
+            <response code="200">Returns a JSON Web Token</response>
+            <response code="400">An AuthenticationDto is required</response>
+            <response code="401">No employee found for provided AuthenticationDto</response>
+        </member>
+        <member name="T:QualityBills.API.Authentication.AuthenticationDto">
+            <summary>
+            An employee DTO for authentication
+            </summary>
+        </member>
+        <member name="P:QualityBills.API.Authentication.AuthenticationDto.Username">
+            <summary>
+            The preferred Username of the employee
+            </summary>
+        </member>
+        <member name="P:QualityBills.API.Authentication.AuthenticationDto.Password">
+            <summary>
+            The password of the employee
+            </summary>
+        </member>
+        <member name="M:QualityBills.API.Employees.EmployeesController.GetEmployeesAsync(System.String,System.Int32,System.Int32)">
+            <summary>
+            Gets all Employees
+            </summary>
+            <param name="searchQuery">An optional searchQuery to search by</param>
+            <param name="pageNumber">The number of the page to get</param>
+            <param name="pageSize">The size of the page to get (max. 20)</param>
+            <returns>An ActionResult of IEnumerable of EmployeeDto</returns>
+            <response code="200">Returns the requested Employees</response>
+        </member>
+    </members>
+</doc>
